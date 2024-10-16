@@ -1,0 +1,23 @@
+#hands{
+    text-align: center;
+}
+input:checked~div .hand{
+    animation: none !important;
+}
+.hand{
+    margin: 20px;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    transform: rotate(10deg);
+    display: inline-block;
+    animation: handShake 2s;
+    infinite;
+}
+.hand > div{
+    position: absolute;
+    box-sizing: border-box;
+    border: 2px solid black;
+    background: gold;
+        transition: all 0.1s;
+}
