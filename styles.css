@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    border: 1px solid black;
+    grid-template-rows: repeat(9, 20%);
+    grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:"a a a a a a"
+                            "a a a a a a"
+                            "b c c c d d"
+                            "b c c c d d"
+                            "b c c c d d"
+                            "b c c c d d"
+                            "b c c c d d"
+                            "b c c c d d"
+                            "e e e e e e";
+}
+
+.container *{
+    border: 1px solid black;
+    background-color: lightgray;
+}
+.Block-1{grid-area: a}
+.Block-2{grid-area: b}
+.Block-3{grid-area: c}
+.Block-4{grid-area: d}
+.Block-5{grid-area: e}
+.container .Block-1 img{
+    width: 100%;
+    height: 50%;
+}
