@@ -102,7 +102,6 @@ ul li.nested:hover > .submenu{
     .col-md-9{width: 90%}
     .col-md-10{width: 100%}
 }
-
 @media only screen and (min-width: 600px) {
     .col-sm-1{width: 10%}
     .col-sm-2{width: 20%}
