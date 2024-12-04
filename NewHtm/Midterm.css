@@ -1,0 +1,57 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(14,15%);
+    grid-template-areas: "b b a a a a a d d d"
+                         "b b a a a a a d d d"
+                         "b b a a a a a d d d"
+                         "b b a a a a a d d d"
+                         "c c a a a a a d d d"
+                         "c c f f f f f e e e"
+                         "c c f f f f f e e e"
+                         "w w w w w w w e e e"
+                         "w w w w w w w e e e"
+                         "s s s s q q q q h h"
+                         "s s s s q q q q h h"
+                         "s s s s q q q q h h"
+                         "t t t t t t t t t t"
+                         "t t t t t t t t t t";
+    grid-gap: 5px;
+}
+[class^="Block-"]{
+    border: 1px solid green;
+    border-radius: 10px;
+    background-color: lightgreen;
+}
+.Block-1{grid-area: b}
+.Block-2{grid-area: a}
+.Block-3{grid-area: d}
+.Block-4{grid-area: c}
+.Block-5{grid-area: f}
+.Block-6{grid-area: e}
+.Block-7{grid-area: w}
+.Block-8{grid-area: s}
+.Block-9{grid-area: q}
+.Block-10{grid-area: h}
+.Block-11{grid-area: t}
+
+
+a{
+    text-decoration: none;
+}
+
+.menu li{
+    display: inline-block;
+    width: 100px;
+    padding: 5px 10px;
+    position: relative;
+}
+.submenu{
+    display: none;
+}
+
+
+ul li.nested:hover > .submenu{
+    display: block;
+    position: relative;
+}

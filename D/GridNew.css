@@ -40,7 +40,3 @@
 .Block-9{grid-area: t;}
 .Block-10{grid-area: s;}
 .Block-11{grid-area: k;}
-.content{
-    min-height: 350px;
-    width: 500px;
-}

@@ -28,10 +28,9 @@
     height: 50%;
 }
 
-.menu{
-    background-color: lightgray;
-    font-size: 20px;
-    padding: 10px;
+
+a{
+        text-decoration: none;
 }
 .menu li{
     display: inline-block;
@@ -45,10 +44,6 @@
 ul li.nested:hover > .submenu{
     display: block;
     position: absolute;
-    top:25px;
-    left: 0;
-    margin: 0;
-    padding: 0;
 }
 
 [class^="col-"]{

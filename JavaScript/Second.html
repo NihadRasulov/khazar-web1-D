@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="content"> This is the content id. <span>first number</span></div>
+
+<div class="container">This is the content of get element by class name 1</div>
+<div class="container">This is the content of get element by class name 2</div>
+<div class="container">This is the content of get element by class name 3</div>
+
+<form>
+  <input type="text" name = "login" value="John"><br>
+  <input id="password" type="password" name = "password" value="123456"><span id="spanText" onclick="showHidePassword()">show</span><br>
+  <input type="number" name = "age" value="34">,<br>
+
+</form>
+<script type="text/javascript">
+
+  let arr = ['red', 'blue','green']
+  console.log(arr)
+  arr.unshift('black')
+  console.log(arr)
+  arr.shift()
+  console.log(arr)
+
+
+  // console.log(arr)
+  // arr.push('white')
+  // console.log(arr)
+  // arr.pop()
+  // console.log(arr)
+
+  // function showHidePassword() {
+  //   let elmnt = document.getElementById('password');
+  //   let spantxt = document.getElementById('spanText');
+  //
+  //   if(elmnt.type == 'password') {
+  //     elmnt.type = 'text';
+  //     spantxt.innerText = 'hide';
+  //   }
+  //   else {
+  //     elmnt.type = 'password';
+  //     spantxt.innerText = 'show'
+  //   }
+  // }
+
+
+  // console.log(document.getElementById('content').innerHTML)
+  //
+  // let container = document.getElementsByClassName('container');
+  // console.log(container.length);
+  // console.log(container[0].innerHTML);
+  //
+  // let element = document.getElementsByTagName("div");
+  // console.log(element.length)
+  //
+  // let qs = document.querySelector('div');
+  // console.log(qs.innerHTML);
+
+</script>
+</body>
+</html>
