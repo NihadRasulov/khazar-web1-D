@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+  <style>
+    #menu ul li{
+      display: inline-block;
+      width: 150px;
+      padding: 5px 10px;
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+<label for="newValue">Add New Value</label>
+<input type="text" name="newValue" id="newValue">
+<button type="button" value="Add" onclick="addMenu()">Add</button>
+
+<div id="menu" style="border: 1px solid black"></div>
+
+<script type="text/javascript">
+
+let arrmenu = ['Menu 1', 'Menu 2', 'Menu 3'];
+
+function getMenu() {
+  let ulMenu = '<ul>';
+  for(let value of arrmenu) {
+    ulMenu+='<li>' + value + '</li>';
+  }
+  ulMenu+='</li>';
+  return ulMenu;
+}
+
+function showMenu() {
+  let menu = getMenu();
+  let divMenu = document.getElementById('menu');
+  divMenu.innerHTML = menu;
+}
+showMenu();
+
+
+function addMenu() {
+  let input = document.getElementById('newValue');
+  arrmenu.push(input.value);
+
+showMenu();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Menu</title>
+    <style>
+        #menu ul li{
+            display: inline-block;
+            text-align: center;
+            width: 150px;
+            background-color: gray;
+            padding: 5px 10px;
+            color: black;
+            font-weight: bold;
+        }
+        #arrow {
+            text-align: center;
+            margin-left: 30px;
+            display: none;
+            div{
+                float: left;
+                    width: 170px;
+                }
+            }
+        </style>
+</head>
+<body>
+
+<label>Add New Value</label>
+<input type="text" name="newValue" id="newValue">
+<input type="submit" value="Add" onclick="addMenu()">
+<a href="#" onclick="activateEditMode()">Edit Mode</a>
+<div id="menu" style="border: 1px solid black;"></div>
+
+<script type="text/javascript">
+
+    let arr = ['Menu 1', 'Menu 2', 'Menu 3'];
+
+    function getMenu() {
+        let ulMenu = '<ul>';
+        let arrowElement = '<div id="arrow">';
+
+        for(let i=0;i<arr.length;i++) {
+            ulMenu+='<li>' + arr[i] + '</li>';
+
+            if(i==0) {
+                arrowElement += '<div><a href="#" onclick="moveRight(' + i + ')">=></a></div>';
+            }
+            else if(i == arr.length-1) {
+                arrowElement += '<div><a href="#" onclick="moveLeft(' + i + ')"><=</a></div>';
+            }
+            else {
+                arrowElement += '<div><a href="#" onclick="moveLeft(' + i + ')"><=</a> | <a href="#" onclick="moveRight(' + i + ')">=></a></div>';
+            }
+        }
+        ulMenu += '</li>';
+        arrowElement += '<div>';
+        return ulMenu + arrowElement;
+    }
+
+    function activateEditMode() {
+        document.getElementById('arrow').style.display = 'block';
+    }
+
+    function moveLeft(index) {
+        currentElement = arr[index];
+        previousElement = arr[index-1];
+        arr.splice(index-1, 2, currentElement, previousElement);
+        showMenu();
+    }
+
+    function moveRight(index) {
+        currentElement = arr[index];
+        nextElement = arr[index+1];
+        arr.splice(index, 2, nextElement, currentElement);
+        showMenu();
+    }
+
+    function addMenu() {
+        let input = document.getElementById('newValue');
+        arr.push(input.value);
+        input.value = '';
+        showMenu();
+    }
+
+    function showMenu() {
+        let menu = getMenu();
+        let divMenu = document.getElementById('menu');
+        divMenu.innerHTML = menu;
+    }
+    showMenu();
+
+
+</script>
+</body>
+</html>

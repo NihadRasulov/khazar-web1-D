@@ -28,39 +28,32 @@
   arr.shift()
   console.log(arr)
 
+  function showHidePassword() {
+    let elmnt = document.getElementById('password');
+    let spantxt = document.getElementById('spanText');
 
-  // console.log(arr)
-  // arr.push('white')
-  // console.log(arr)
-  // arr.pop()
-  // console.log(arr)
-
-  // function showHidePassword() {
-  //   let elmnt = document.getElementById('password');
-  //   let spantxt = document.getElementById('spanText');
-  //
-  //   if(elmnt.type == 'password') {
-  //     elmnt.type = 'text';
-  //     spantxt.innerText = 'hide';
-  //   }
-  //   else {
-  //     elmnt.type = 'password';
-  //     spantxt.innerText = 'show'
-  //   }
-  // }
+    if(elmnt.type == 'password') {
+      elmnt.type = 'text';
+      spantxt.innerText = 'hide';
+    }
+    else {
+      elmnt.type = 'password';
+      spantxt.innerText = 'show'
+    }
+  }
 
 
-  // console.log(document.getElementById('content').innerHTML)
-  //
-  // let container = document.getElementsByClassName('container');
-  // console.log(container.length);
-  // console.log(container[0].innerHTML);
-  //
-  // let element = document.getElementsByTagName("div");
-  // console.log(element.length)
-  //
-  // let qs = document.querySelector('div');
-  // console.log(qs.innerHTML);
+  console.log(document.getElementById('content').innerHTML)
+
+  let container = document.getElementsByClassName('container');
+  console.log(container.length);
+  console.log(container[0].innerHTML);
+
+  let element = document.getElementsByTagName("div");
+  console.log(element.length)
+
+  let qs = document.querySelector('div');
+  console.log(qs.innerHTML);
 
 </script>
 </body>

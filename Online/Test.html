@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Menu</title>
+  <style>
+    #menu {
+      background-color: lightgray;
+      padding: 10px;
+      border: 1px solid black;
+      width: 150px;
+    }
+    li {
+      list-style: none;
+      padding: 5px;
+    }
+    button {
+      margin: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Edit Button -->
+<button id="edit" onclick="showEdit()">Edit</button>
+
+<!-- Menu Display -->
+<div id="menu"></div>
+
+<!-- Control Buttons -->
+<div>
+  <button onclick="moveUp()">=></button>
+  <button onclick="moveDown()"><=</button>
+</div>
+
+<script>
+  // Simple Menu Array
+  let menu = ['Menu 1', 'Menu 2', 'Menu 3'];
+  let selectedIndex = 0;
+
+  // Function to display the menu
+  function displayMenu() {
+    let menuHTML = '';
+    for (let i = 0; i < menu.length; i++) {
+      // Highlight the selected menu item
+      menuHTML += `<li ${i === selectedIndex ? 'style="color: blue; font-weight: bold;"' : ''}>${menu[i]}</li>`;
+    }
+    document.getElementById('menu').innerHTML = `<ul>${menuHTML}</ul>`;
+  }
+
+  // Function to activate Edit Mode
+  function showEdit() {
+    alert('Edit Mode Activated!');
+    displayMenu();
+  }
+
+  // Function to move the selected item up
+  function moveUp() {
+    if (selectedIndex > 0) {
+      [menu[selectedIndex], menu[selectedIndex - 1]] = [menu[selectedIndex - 1], menu[selectedIndex]];
+      selectedIndex--;
+      displayMenu();
+    }
+  }
+
+  // Function to move the selected item down
+  function moveDown() {
+    if (selectedIndex < menu.length - 1) {
+      [menu[selectedIndex], menu[selectedIndex + 1]] = [menu[selectedIndex + 1], menu[selectedIndex]];
+      selectedIndex++;
+      displayMenu();
+    }
+  }
+
+  // Initial display of the menu
+  displayMenu();
+</script>
+
+</body>
+</html>

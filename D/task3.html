@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Individual Menu Switcher</title>
+  <style>
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .menu-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+      border: 1px solid gray;
+      text-align: center;
+    }
+
+    button {
+      margin: 5px;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="menu-container" id="menuContainer"></div>
+
+<script>
+  // Array of menus
+  const menus = ['Menu 1', 'Menu 2', 'Menu 3'];
+
+  // Function to display menus
+  function renderMenus() {
+    const menuContainer = document.getElementById('menuContainer');
+    menuContainer.innerHTML = ''; // Clear existing menus
+    menus.forEach((menu, index) => {
+      const menuDiv = document.createElement('div');
+      menuDiv.className = 'menu-item';
+      menuDiv.innerHTML = `
+          <div>${menu}</div>
+          <button onclick="moveLeft(${index})"><=</button>
+          <button onclick="moveRight(${index})">=></button>
+        `;
+      menuContainer.appendChild(menuDiv);
+    });
+  }
+
+  // Function to move a menu to the left
+  function moveLeft(index) {
+    if (index > 0) {
+      const temp = menus[index];
+      menus[index] = menus[index - 1];
+      menus[index - 1] = temp;
+      renderMenus();
+    }
+  }
+
+  // Function to move a menu to the right
+  function moveRight(index) {
+    if (index < menus.length - 1) {
+      const temp = menus[index];
+      menus[index] = menus[index + 1];
+      menus[index + 1] = temp;
+      renderMenus();
+    }
+  }
+
+  // Initial render of menus
+  renderMenus();
+</script>
+</body>
+</html>
